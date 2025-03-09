@@ -19,23 +19,27 @@ import java.util.Map;
 )
 @LambdaUrlConfig(authType = AuthType.NONE )
 public class HelloWorld implements RequestHandler<Map<String, Object>, Map<String, Object>> {
+	@Override
+	public Map<String, Object> handleRequest(Map<String, Object> event, Context context) {
+		System.out.println("Lambda function triggered.");
 
-@Override
-public Map<String, Object> handleRequest(Map<String, Object> event, Context context) {
-	String path = (String) event.getOrDefault("rawPath", event.get("path"));
-	String method = (String) ((Map<String, Object>) event.getOrDefault("requestContext", new HashMap<>()))
-			.getOrDefault("httpMethod", "");
+		String path = (String) event.getOrDefault("rawPath", event.get("path"));
+		Map<String, Object> requestContext = (Map<String, Object>) event.get("requestContext");
+		Map<String, Object> httpData = requestContext != null ? (Map<String, Object>) requestContext.get("http") : new HashMap<>();
+		String method = (String) httpData.getOrDefault("method", event.get("httpMethod"));
 
-	Map<String, Object> response = new HashMap<>();
+		Map<String, Object> response = new HashMap<>();
+		response.put("headers", Map.of("Content-Type", "application/json"));
 
-	if ("/hello".equals(path) && "GET".equals(method)) {
-		response.put("statusCode", 200);
-		response.put("message","Hello from Lambda");
-	} else {
-		response.put("statusCode", 400);
-		response.put("message", String.format("{Bad request syntax or unsupported method. Request path: %d. HTTP method: GET %s}",path, method));
+		if ("/hello".equals(path) && "GET".equals(method)) {
+			response.put("statusCode", 200);
+			response.put("body", "{\"statusCode\": 200, \"message\": \"Hello from Lambda!\"}");
+		} else {
+			String errorMessage = String.format("Invalid request. Path: %s, Method: %s", path, method);
+			response.put("statusCode", 400);
+			response.put("body", "{\"statusCode\": 400, \"message\": \"" + errorMessage + "\"}");
+		}
+
+		return response;
 	}
-
-	return response;
-}
 }

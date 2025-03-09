@@ -33,9 +33,9 @@ public class HelloWorld implements RequestHandler<Map<String, Object>, Map<Strin
 
 		if ("/hello".equals(path) && "GET".equals(method)) {
 			response.put("statusCode", 200);
-			response.put("body", "{\"statusCode\": 200, \"message\": \"Hello from Lambda!\"}");
+			response.put("body", "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}");
 		} else {
-			String errorMessage = String.format("Invalid request. Path: %s, Method: %s", path, method);
+			String errorMessage = String.format("Bad request syntax or unsupported method. Request path: %s. HTTP method: %s", path, method);
 			response.put("statusCode", 400);
 			response.put("body", "{\"statusCode\": 400, \"message\": \"" + errorMessage + "\"}");
 		}

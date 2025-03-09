@@ -22,7 +22,7 @@ public class HelloWorld implements RequestHandler<Map<String, Object>, Map<Strin
 
 @Override
 public Map<String, Object> handleRequest(Map<String, Object> event, Context context) {
-	String path = (String) event.getOrDefault("rawPath", "");
+	String path = (String) event.getOrDefault("rawPath", event.get("path"));
 	String method = (String) ((Map<String, Object>) event.getOrDefault("requestContext", new HashMap<>()))
 			.getOrDefault("httpMethod", "");
 
@@ -30,10 +30,10 @@ public Map<String, Object> handleRequest(Map<String, Object> event, Context cont
 
 	if ("/hello".equals(path) && "GET".equals(method)) {
 		response.put("statusCode", 200);
-		response.put("body", "{\"message\": \"Hello from Lambda!\"}");
+		response.put("message","Hello from Lambda");
 	} else {
 		response.put("statusCode", 400);
-		response.put("body", String.format("{\"error\": \"Bad Request: %s %s\"}", method, path));
+		response.put("message", String.format("{Bad request syntax or unsupported method. Request path: %d. HTTP method: GET %s}",path, method));
 	}
 
 	return response;

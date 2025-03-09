@@ -1,0 +1,17 @@
+account_id: '196241772369'
+deploy_target_bucket: syndicate-education-platform-custom-sandbox-artifacts-sbox01/33227896/task02
+expiration: 2025-03-09 10:25:20.821329+00:00
+extended_prefix_mode: true
+iam_permissions_boundary: arn:aws:iam::196241772369:policy/eo_role_boundary
+project_path: C:\Users\reshma_begum\AWS-Projects\AWS
+region: eu-central-1
+resources_prefix: cmtr-33227896-
+tags:
+  run_id: JAP-09
+  run_type: stm
+  type: user
+  user_id: '33227896'
+temp_aws_access_key_id: ASIAS3MHLZ5I22NO3T75
+temp_aws_secret_access_key: BKf79uoTAFvOC/GrfxOYnamPPNbtDVoeDrvu3YzC
+temp_aws_session_token: IQoJb3JpZ2luX2VjECoaCXVzLWVhc3QtMSJHMEUCIFVNCuB4eZ/IgkT+nFosdCEiUzBdZS3yYukCYVj1Yb7fAiEAkNjCbijGPYc0mocKRhYgegvvwdfJnwbuxnSuJ5od8UUq1QIIcxABGgwxOTYyNDE3NzIzNjkiDJKvJp4Y375afGxTOiqyAtA0HSjzoYqhjBvMcWzoEJfLZvc9+UWVjOp0TdTfPOIr+DVZrDNJCWSxHCHb8lIiyyhtc+uvHgs2YvrnWO9Zd7OHLRjK3xwBvGjNCR7kcQeBcn8TDrvP6ItzvGZnMLL2uAwaRd8qYb/VvDWItrwfOssXBeoLhSmnE5NV/ypOTG3XLY3LYA6V8qlGT4Ukh5JiuGt7Q2aiVVrzOVnXcMW/v6xEbZx75cl4DkOPZgRULYJEx9B2p1CeHYKHApsH4QCQ3+645B7SpqJZXlEVfmA3h1b6dwOZNxn/u6eMT2ZCcgXlkpoWWAIxkOS3yMlA8qSMWCORbdTDPROL834xLcMkx3zYYagGY++cnXzVD1vJxWdJkn13aw9SYv+9Anmirx4mbei6SwMk06ZirY6COxR/s7hYWzDlv7W+BjqdAVsVrNI09fddBkM+cff1gR4FTtneYhVZHx4iHfuGpozE+dYh3BA72oC7aYaSyAKtjVKMPd9CpLtxHp8kEhwSETCDNEt7WAI0TPhMYAceEOclRK3vQJijAMqS1vzBlPGprFtWkoQ+V04B8/85iK/Gtj3ZI1gR+jAMt2v9CyOvU6PzXdeGZ7ocneVybeMGv4+3kUJVNx1Jz398Km0c6/Q=
+use_temp_creds: false

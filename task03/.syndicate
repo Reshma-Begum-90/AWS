@@ -1,10 +1,66 @@
 name: task03
 locks:
   modification_lock:
-    last_modification_date: '2025-03-11T08:24:00Z'
+    last_modification_date: '2025-03-11T14:44:11Z'
     is_locked: false
     initiator: reshma_begum
 events:
+- operation: deploy
+  initiator: reshma_begum
+  bundle_name: task03_250311.200823
+  deploy_name: task03
+  time_start: '2025-03-11T20:14:04Z'
+  time_end: '2025-03-11T20:14:11Z'
+  duration_sec: 6.581
+  status: succeeded
+  rollback_on_error: false
+- operation: test
+  initiator: reshma_begum
+  time_start: '2025-03-11T20:12:59Z'
+  time_end: '2025-03-11T20:12:59Z'
+  duration_sec: 0.001
+  status: succeeded
+- operation: build
+  initiator: reshma_begum
+  bundle_name: task03_250311.200823
+  time_start: '2025-03-11T20:08:23Z'
+  time_end: '2025-03-11T20:08:43Z'
+  duration_sec: 19.574
+  status: succeeded
+- operation: upload
+  initiator: reshma_begum
+  bundle_name: task03_250311.200823
+  time_start: '2025-03-11T20:08:31Z'
+  time_end: '2025-03-11T20:08:43Z'
+  duration_sec: 11.134
+  status: succeeded
+- operation: package_meta
+  initiator: reshma_begum
+  bundle_name: task03_250311.200823
+  time_start: '2025-03-11T20:08:31Z'
+  time_end: '2025-03-11T20:08:31Z'
+  duration_sec: 0.012
+  status: succeeded
+- operation: assemble
+  initiator: reshma_begum
+  bundle_name: task03_250311.200823
+  time_start: '2025-03-11T20:08:25Z'
+  time_end: '2025-03-11T20:08:31Z'
+  duration_sec: 6.774
+  status: succeeded
+- operation: assemble_java_mvn
+  initiator: reshma_begum
+  bundle_name: task03_250311.200823
+  time_start: '2025-03-11T20:08:25Z'
+  time_end: '2025-03-11T20:08:31Z'
+  duration_sec: 6.68
+  status: succeeded
+- operation: test
+  initiator: reshma_begum
+  time_start: '2025-03-11T20:08:24Z'
+  time_end: '2025-03-11T20:08:24Z'
+  duration_sec: 0.001
+  status: succeeded
 - operation: deploy
   initiator: reshma_begum
   bundle_name: task03_250311.135314
@@ -797,11 +853,11 @@ events:
   status: succeeded
 latest_deploy:
   initiator: reshma_begum
-  bundle_name: task03_250311.135314
+  bundle_name: task03_250311.200823
   deploy_name: task03
-  time_start: '2025-03-11T13:53:53Z'
-  time_end: '2025-03-11T13:54:00Z'
-  duration_sec: 7.476
+  time_start: '2025-03-11T20:14:04Z'
+  time_end: '2025-03-11T20:14:11Z'
+  duration_sec: 6.581
   is_succeeded: true
 build_projects_mapping:
   java: jsrc/main/java

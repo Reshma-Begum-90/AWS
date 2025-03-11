@@ -15,13 +15,19 @@ import java.util.Map;
 	aliasName = "${lambdas_alias_name}",
 	logsExpiration = RetentionSetting.SYNDICATE_ALIASES_SPECIFIED
 )
-public class HelloWorld implements RequestHandler<Object, Map<String, Object>> {
+@LambdaUrlConfig(authType = AuthType.NONE)
+public class HelloWorld implements RequestHandler<Map<String, Object>, Map<String, Object>> {
 
-	public Map<String, Object> handleRequest(Object request, Context context) {
-		System.out.println("Hello from lambda");
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("statusCode", 200);
-		resultMap.put("message", "Hello from Lambda");
-		return resultMap;
+	@Override
+	public Map<String, Object> handleRequest(Map<String, Object> event, Context context) {
+		// Ensure path & method are correctly retrieved
+		String path = (String) event.getOrDefault("rawPath", event.get("path"));
+		// If the request is a GET to /hello, return success response
+
+		return Map.of(
+				"statusCode", 200,
+				"message", "Hello from Lambda"
+		);
+
 	}
 }

@@ -1,10 +1,60 @@
 name: task03
 locks:
   modification_lock:
-    last_modification_date: '2025-03-11T07:12:06Z'
+    last_modification_date: '2025-03-11T07:44:02Z'
     is_locked: false
     initiator: reshma_begum
 events:
+- operation: deploy
+  initiator: reshma_begum
+  bundle_name: task03_250311.131220
+  deploy_name: task03
+  time_start: '2025-03-11T13:13:56Z'
+  time_end: '2025-03-11T13:14:02Z'
+  duration_sec: 6.396
+  status: succeeded
+  rollback_on_error: false
+- operation: build
+  initiator: reshma_begum
+  bundle_name: task03_250311.131220
+  time_start: '2025-03-11T13:12:20Z'
+  time_end: '2025-03-11T13:12:33Z'
+  duration_sec: 13.573
+  status: succeeded
+- operation: upload
+  initiator: reshma_begum
+  bundle_name: task03_250311.131220
+  time_start: '2025-03-11T13:12:26Z'
+  time_end: '2025-03-11T13:12:33Z'
+  duration_sec: 7.557
+  status: succeeded
+- operation: package_meta
+  initiator: reshma_begum
+  bundle_name: task03_250311.131220
+  time_start: '2025-03-11T13:12:26Z'
+  time_end: '2025-03-11T13:12:26Z'
+  duration_sec: 0.019
+  status: succeeded
+- operation: assemble
+  initiator: reshma_begum
+  bundle_name: task03_250311.131220
+  time_start: '2025-03-11T13:12:21Z'
+  time_end: '2025-03-11T13:12:26Z'
+  duration_sec: 4.554
+  status: succeeded
+- operation: assemble_java_mvn
+  initiator: reshma_begum
+  bundle_name: task03_250311.131220
+  time_start: '2025-03-11T13:12:21Z'
+  time_end: '2025-03-11T13:12:26Z'
+  duration_sec: 4.434
+  status: succeeded
+- operation: test
+  initiator: reshma_begum
+  time_start: '2025-03-11T13:12:21Z'
+  time_end: '2025-03-11T13:12:21Z'
+  duration_sec: 0.001
+  status: succeeded
 - operation: deploy
   initiator: reshma_begum
   bundle_name: task03_250311.124126
@@ -697,11 +747,11 @@ events:
   status: succeeded
 latest_deploy:
   initiator: reshma_begum
-  bundle_name: task03_250311.124126
+  bundle_name: task03_250311.131220
   deploy_name: task03
-  time_start: '2025-03-11T12:42:00Z'
-  time_end: '2025-03-11T12:42:06Z'
-  duration_sec: 5.589
+  time_start: '2025-03-11T13:13:56Z'
+  time_end: '2025-03-11T13:14:02Z'
+  duration_sec: 6.396
   is_succeeded: true
 build_projects_mapping:
   java: jsrc/main/java
